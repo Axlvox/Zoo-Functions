@@ -6,7 +6,6 @@ const getSpeciesByIds = (...ids) => {
   if (ids.length === 0) {
     return [];
   }
-  
   return species.filter((animal) => ids.includes(animal.id));
 };
 
