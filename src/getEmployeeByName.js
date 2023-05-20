@@ -10,7 +10,7 @@ const getEmployeeByName = (...employeeName) => {
     employeeName.includes(employee.firstName)
     || employeeName.includes(employee.lastName));
 
-  return worker || {};
+  return worker;
 };
 
 module.exports = getEmployeeByName;
