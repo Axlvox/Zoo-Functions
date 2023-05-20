@@ -33,7 +33,7 @@ const getRelatedEmployees = (managerId) => {
     const colaboradores = employees.filter((employee) => employee.managers.includes(managerId));
     const names = colaboradores.map((employee) => `${employee.firstName} ${employee.lastName}`);
 
-  return names;
+    return names;
   } catch (error) {
     console.error(error.message);
     throw error;
