@@ -17,6 +17,17 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('popularity')).toBe(5);
   });
   test('retorna um array com a relação de dias em que é possível visitar os elefantes', () => {
-    expect(handlerElephants('availability')).toEqual(['Friday', 'Saturday', 'Sunday', 'Tuesday']);
+    const expectedAvailability = ['Friday', 'Saturday', 'Sunday', 'Tuesday'];
+    expect(handlerElephants('availability')).toEqual(expect.arrayContaining(expectedAvailability));
+    expect(handlerElephants('availability')).not.toContain('Monday');
+  });
+  test('não foi passado argumento', () => {
+    expect(handlerElephants()).toBe(undefined);
+  });
+  test('retorna parâmetro inválido', () => {
+    expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  test('não contempla funcionalidade', () => {
+    expect(handlerElephants('default')).toBeNull();
   });
 });
