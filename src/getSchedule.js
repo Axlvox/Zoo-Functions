@@ -31,7 +31,7 @@ const getSchedule = (scheduleTarget) => {
       officeHour: '',
       exhibition: [''],
     },
-  }
+  };
 
   const updatedDias = Object.keys(dias).map((day) => ({
     ...dias[day],
