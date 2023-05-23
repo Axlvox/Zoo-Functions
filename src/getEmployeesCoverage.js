@@ -39,6 +39,7 @@ function getFilteredEmployees({ name, id }, employees) {
   if (!name && !id) {
     return employees;
   }
+
   let filteredEmployees = employees;
   if (name !== undefined) {
     const secondName = name.split(' ')[1];
